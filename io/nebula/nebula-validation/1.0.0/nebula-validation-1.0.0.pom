@@ -164,6 +164,7 @@
                   <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
                   <merge>true</merge>
                   <branch>refs/heads/master</branch>
+                  <skip>${skip_maven_deploy}</skip>
                 </configuration>
               </execution>
             </executions>
