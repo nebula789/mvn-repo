@@ -3,21 +3,21 @@
   <groupId>io.owl</groupId>
   <artifactId>owl-oss-spring-boot-starter</artifactId>
   <versioning>
-    <lastUpdated>20240202133315</lastUpdated>
+    <lastUpdated>20240214071455</lastUpdated>
     <snapshot>
-      <timestamp>20240202.133315</timestamp>
+      <timestamp>20240214.071455</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0.0-20240202.133315-1</value>
-        <updated>20240202133315</updated>
+        <value>1.0.0-20240214.071455-1</value>
+        <updated>20240214071455</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0.0-20240202.133315-1</value>
-        <updated>20240202133315</updated>
+        <value>1.0.0-20240214.071455-1</value>
+        <updated>20240214071455</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
