@@ -294,8 +294,8 @@
           <plugin>
             <artifactId>maven-deploy-plugin</artifactId>
             <configuration>
-              <altReleaseDeploymentRepository>maven.repo::default::file://${project.build.directory}/mvn-repo</altReleaseDeploymentRepository>
-              <altSnapshotDeploymentRepository>maven.repo::default::file://${project.build.directory}/mvn-repo</altSnapshotDeploymentRepository>
+              <altReleaseDeploymentRepository>maven.repo::file://${project.build.directory}/mvn-repo</altReleaseDeploymentRepository>
+              <altSnapshotDeploymentRepository>maven.repo::file://${project.build.directory}/mvn-repo</altSnapshotDeploymentRepository>
               <skip>false</skip>
             </configuration>
           </plugin>
