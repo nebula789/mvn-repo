@@ -3,21 +3,21 @@
   <groupId>io.owlframework</groupId>
   <artifactId>owl-captcha-hutool</artifactId>
   <versioning>
-    <lastUpdated>20250413013556</lastUpdated>
+    <lastUpdated>20250413025858</lastUpdated>
     <snapshot>
-      <timestamp>20250413.013556</timestamp>
+      <timestamp>20250413.025858</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0.1-20250413.013556-1</value>
-        <updated>20250413013556</updated>
+        <value>1.0.1-20250413.025858-1</value>
+        <updated>20250413025858</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0.1-20250413.013556-1</value>
-        <updated>20250413013556</updated>
+        <value>1.0.1-20250413.025858-1</value>
+        <updated>20250413025858</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
