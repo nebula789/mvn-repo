@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>io.owlframework</groupId>
+  <artifactId>owl-captcha-other</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20250413034800</lastUpdated>
+  </versioning>
+</metadata>
