@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.owlframework</groupId>
+		<artifactId>owl-swagger</artifactId>
+		<version>2.1.0</version>
+	</parent>
+
+	<artifactId>owl-swagger-sample</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>sampleA</module>
+		<module>department-service</module>
+		<module>employee-service</module>
+		<module>organization-service</module>
+		<module>gateway-service</module>
+	</modules>
+
+	<properties>
+		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<version.spring-cloud-alibaba>2023.0.3.2</version.spring-cloud-alibaba>
+		<maven-install.version>3.1.1</maven-install.version>
+		<maven-deploy.version>2.8.2</maven-deploy.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${version.spring-cloud-alibaba}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!--<plugin>-->
+			<!--	<groupId>org.apache.maven.plugins</groupId>-->
+			<!--	<artifactId>maven-deploy-plugin</artifactId>-->
+			<!--	&lt;!&ndash;<version>${maven-deploy.version}</version>&ndash;&gt;-->
+			<!--	<configuration>-->
+			<!--		<skip>true</skip>-->
+			<!--	</configuration>-->
+			<!--</plugin>-->
+		</plugins>
+	</build>
+
+</project>
