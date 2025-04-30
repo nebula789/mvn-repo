@@ -25,6 +25,7 @@
 		<versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 		<site-maven-plugin.version>0.12</site-maven-plugin.version>
+		<maven-install.version>3.1.1</maven-install.version>
 
 		<version.spring-boot>3.4.1</version.spring-boot>
 		<springdoc.version>2.8.1</springdoc.version>
@@ -32,6 +33,7 @@
 		<version.lombok>1.18.36</version.lombok>
 		<spring-cloud-gateway.version>4.2.0</spring-cloud-gateway.version>
 		<spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
+		<spring-cloud-loadbalancer.version>4.2.0</spring-cloud-loadbalancer.version>
 		<nacos-client.version>2.4.2</nacos-client.version>
 	</properties>
 
@@ -86,6 +88,12 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-loadbalancer</artifactId>
+				<version>${spring-cloud-loadbalancer.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>com.alibaba.nacos</groupId>
 				<artifactId>nacos-client</artifactId>
 				<version>${nacos-client.version}</version>
@@ -110,6 +118,11 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+			<modules>
+				<module>owl-swagger-bom</module>
+				<module>owl-swagger-spring-boot-starter</module>
+				<module>owl-swagger-gateway-spring-boot-starter</module>
+			</modules>
 			<distributionManagement>
 				<repository>
 					<id>github</id>
@@ -223,6 +236,11 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>${maven-install.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven-javadoc-plugin.version}</version>
 				<configuration>
@@ -264,22 +282,9 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
 				<version>${versions-maven-plugin.version}</version>
-				<!--<configuration>-->
-				<!--	<ruleSet>-->
-				<!--		<ignoreVersions>-->
-				<!--			&lt;!&ndash; use ignoreVersion tag setting "SNAPSHOT、alpha、beta" and so on &ndash;&gt;-->
-				<!--			<ignoreVersion>-->
-				<!--				&lt;!&ndash; 'exact' (default) or 'regex' &ndash;&gt;-->
-				<!--				<type>regex</type>-->
-				<!--				<version>(.+-SNAPSHOT|.+-M\d)</version>-->
-				<!--			</ignoreVersion>-->
-				<!--			<ignoreVersion>-->
-				<!--				<type>regex</type>-->
-				<!--				<version>.+-(alpha|beta)</version>-->
-				<!--			</ignoreVersion>-->
-				<!--		</ignoreVersions>-->
-				<!--	</ruleSet>-->
-				<!--</configuration>-->
+				<configuration>
+					<generateBackupPoms>false</generateBackupPoms>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
