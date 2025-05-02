@@ -118,6 +118,11 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+			<modules>
+				<module>owl-swagger-spring-boot-starter</module>
+				<module>owl-swagger-gateway-spring-boot-starter</module>
+				<module>owl-swagger-bom</module>
+			</modules>
 			<distributionManagement>
 				<repository>
 					<id>github</id>
