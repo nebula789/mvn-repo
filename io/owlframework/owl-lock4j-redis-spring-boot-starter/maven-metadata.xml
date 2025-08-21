@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>io.owlframework</groupId>
+  <artifactId>owl-lock4j-redis-spring-boot-starter</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20250821115813</lastUpdated>
+  </versioning>
+</metadata>
