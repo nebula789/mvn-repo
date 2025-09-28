@@ -3,16 +3,16 @@
   <groupId>io.owl</groupId>
   <artifactId>owl</artifactId>
   <versioning>
-    <lastUpdated>20250928151604</lastUpdated>
+    <lastUpdated>20250928152151</lastUpdated>
     <snapshot>
-      <timestamp>20250928.151604</timestamp>
-      <buildNumber>1</buildNumber>
+      <timestamp>20250928.152151</timestamp>
+      <buildNumber>2</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>5-20250928.151604-1</value>
-        <updated>20250928151604</updated>
+        <value>5-20250928.152151-2</value>
+        <updated>20250928152151</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
