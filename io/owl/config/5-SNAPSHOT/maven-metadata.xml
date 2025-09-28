@@ -3,21 +3,21 @@
   <groupId>io.owl</groupId>
   <artifactId>config</artifactId>
   <versioning>
-    <lastUpdated>20250928153148</lastUpdated>
+    <lastUpdated>20250928154443</lastUpdated>
     <snapshot>
-      <timestamp>20250928.153148</timestamp>
-      <buildNumber>1</buildNumber>
+      <timestamp>20250928.154443</timestamp>
+      <buildNumber>2</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>5-20250928.153148-1</value>
-        <updated>20250928153148</updated>
+        <value>5-20250928.154443-2</value>
+        <updated>20250928154443</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>5-20250928.153148-1</value>
-        <updated>20250928153148</updated>
+        <value>5-20250928.154443-2</value>
+        <updated>20250928154443</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
