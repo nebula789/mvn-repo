@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>io.owl</groupId>
+  <artifactId>config</artifactId>
+  <versioning>
+    <lastUpdated>20250928151604</lastUpdated>
+    <snapshot>
+      <timestamp>20250928.151604</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>5-20250928.151604-1</value>
+        <updated>20250928151604</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>5-20250928.151604-1</value>
+        <updated>20250928151604</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>5-SNAPSHOT</version>
+</metadata>
