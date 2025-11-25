@@ -3,33 +3,33 @@
   <groupId>io.owl</groupId>
   <artifactId>checkstyle-config</artifactId>
   <versioning>
-    <lastUpdated>20251123061120</lastUpdated>
+    <lastUpdated>20251125141040</lastUpdated>
     <snapshot>
-      <timestamp>20251123.061120</timestamp>
-      <buildNumber>2</buildNumber>
+      <timestamp>20251125.141040</timestamp>
+      <buildNumber>3</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20251123.061120-2</value>
-        <updated>20251123061120</updated>
+        <value>1.0-20251125.141040-3</value>
+        <updated>20251125141040</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0-20251123.061120-2</value>
-        <updated>20251123061120</updated>
+        <value>1.0-20251125.141040-3</value>
+        <updated>20251125141040</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.0-20251123.061120-2</value>
-        <updated>20251123061120</updated>
+        <value>1.0-20251125.141040-3</value>
+        <updated>20251125141040</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>1.0-20251123.061120-2</value>
-        <updated>20251123061120</updated>
+        <value>1.0-20251125.141040-3</value>
+        <updated>20251125141040</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
