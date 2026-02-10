@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dtool</groupId>
+    <artifactId>dtools</artifactId>
+    <version>2.0.0</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+
+        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <commons-text.version>1.15.0</commons-text.version>
+        <commons-beanutils.version>1.11.0</commons-beanutils.version>
+        <commons-codec.version>1.21.0</commons-codec.version>
+        <commons-io.version>2.21.0</commons-io.version>
+        <commons-net.version>3.12.0</commons-net.version>
+        <commons-rng.version>1.6</commons-rng.version>
+        <httpasyncclient.version>4.1.5</httpasyncclient.version>
+        <httpclient5.version>5.6</httpclient5.version>
+
+        <guava.version>33.5.0-jre</guava.version>
+
+        <slf4j-api.version>2.0.17</slf4j-api.version>
+        <logback.version>1.5.28</logback.version>
+        <log4j2.version>2.25.2</log4j2.version>
+
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <jackson.version>3.0.3</jackson.version>
+        <version.fasterxml.uuid>5.2.0</version.fasterxml.uuid>
+        <dom4j.version>2.2.0</dom4j.version>
+        <money-api.version>1.1</money-api.version>
+        <batik.version>1.19</batik.version>
+        <xerces.version>2.12.2</xerces.version>
+        <zxing.version>3.5.4</zxing.version>
+
+        <junit.version>6.0.1</junit.version>
+        <assertj-core.version>3.27.6</assertj-core.version>
+        <wiremock.version>3.13.2</wiremock.version>
+        <lombok.version>1.18.42</lombok.version>
+        <micrometer.version>1.16.1</micrometer.version>
+        <jakarta.xml.bind.version>4.0.5</jakarta.xml.bind.version>
+        <jaxb-runtime.version>4.0.6</jaxb-runtime.version>
+
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
+        <versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
+        <site-maven-plugin.version>0.12</site-maven-plugin.version>
+        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+        <maven-enforcer-plugin.version>3.6.2</maven-enforcer-plugin.version>
+        <proguard-maven-plugin.version>2.7.0</proguard-maven-plugin.version>
+
+        <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
+        <checkstyle.version>13.2.0</checkstyle.version>
+        <checkstyle-config.version>1.0-SNAPSHOT</checkstyle-config.version>
+        <jspecify.version>1.0.0</jspecify.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>tools.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- region	apache	-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>${commons-text.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons-beanutils.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>${commons-net.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-rng-core</artifactId>
+            <version>${commons-rng.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-rng-simple</artifactId>
+            <version>${commons-rng.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpasyncclient</artifactId>
+            <version>${httpasyncclient.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>${httpclient5.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+            <optional>true</optional>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5-fluent</artifactId>
+            <version>${httpclient5.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+            <optional>true</optional>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-all</artifactId>
+            <version>${batik.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>${xerces.version}</version>
+        </dependency>
+
+
+        <!-- endregion	apache	-->
+
+        <!-- region	log	-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- endregion	log	-->
+
+        <!-- region	test	-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.wiremock</groupId>
+            <artifactId>wiremock</artifactId>
+            <version>${wiremock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- endregion	test	-->
+
+        <!-- region google		-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>${zxing.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- endregion google		-->
+
+        <!--region other-->
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>${pinyin4j.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>tools.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.uuid</groupId>
+            <artifactId>java-uuid-generator</artifactId>
+            <version>${version.fasterxml.uuid}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.money</groupId>
+            <artifactId>money-api</artifactId>
+            <version>${money-api.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-java11</artifactId>
+            <version>${micrometer.version}</version>
+        </dependency>
+
+        <!-- JAXB API -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>${jakarta.xml.bind.version}</version>
+        </dependency>
+
+        <!-- JAXB Runtime -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>${jaxb-runtime.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+            <version>${jspecify.version}</version>
+        </dependency>
+
+        <!--endregion other-->
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>github</id>
+                    <url>https://raw.github.com/nebula789/mvn-repo/master</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>github</id>
+                    <url>https://raw.github.com/nebula789/mvn-repo/master</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>local repository</name>
+                    <url>file:${project.build.directory}/mvn-repo</url>
+                </repository>
+                <snapshotRepository>
+                    <id>github</id>
+                    <name>local snapshot repository</name>
+                    <url>file:${project.build.directory}/mvn-repo</url>
+                </snapshotRepository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>${maven-jar-plugin.version}</version>
+                        <configuration>
+                            <archive>
+                                <!--not include maven information-->
+                                <addMavenDescriptor>false</addMavenDescriptor>
+                            </archive>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven-deploy-plugin.version}</version>
+                        <configuration>
+                            <altReleaseDeploymentRepository>
+                                maven.repo::default::file://${project.build.directory}/mvn-repo
+                            </altReleaseDeploymentRepository>
+                            <altSnapshotDeploymentRepository>
+                                maven.repo::default::file://${project.build.directory}/mvn-repo
+                            </altSnapshotDeploymentRepository>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.github.github</groupId>
+                        <artifactId>site-maven-plugin</artifactId>
+                        <version>${site-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>site</goal>
+                                </goals>
+                                <phase>deploy</phase>
+                                <configuration>
+                                    <server>github</server>
+                                    <message>deploy jar ${project.build.finalName}</message>
+                                    <repositoryName>mvn-repo</repositoryName>
+                                    <repositoryOwner>nebula789</repositoryOwner>
+                                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                                    <merge>true</merge>
+                                    <branch>refs/heads/master</branch>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>nexus</id>
+            <distributionManagement>
+                <repository>
+                    <id>nexus</id>
+                    <name>Nexus Release Repository</name>
+                    <url>http://81.69.28.207:8081/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>nexus</id>
+                    <name>Nexus Snapshot Repository</name>
+                    <url>http://81.69.28.207:8081/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven-deploy-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>false</skip>
+                                </configuration>
+                            </execution>
+                            <!--<execution>-->
+                            <!--	<id>attach-javadocs</id>-->
+                            <!--	<phase>deploy</phase>-->
+                            <!--	<goals>-->
+                            <!--		<goal>deploy</goal>-->
+                            <!--	</goals>-->
+                            <!--</execution>-->
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-Xlint:deprecation</arg>
+                        <arg>-Xlint:unchecked</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <tags>
+                        <tag>
+                            <name>time</name>
+                            <placement>a</placement>
+                            <head>Time</head>
+                        </tag>
+                        <tag>
+                            <name>author</name>
+                            <placement>m</placement>
+                            <head>Author</head>
+                        </tag>
+                        <tag>
+                            <name>tableAuthor</name>
+                            <placement>c</placement>
+                            <head>Table Author</head>
+                        </tag>
+                    </tags>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <additionalOptions>
+                                <additionalOption>-Xdoclint:none</additionalOption>
+                            </additionalOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+                <!--<configuration>-->
+                <!--	<ruleSet>-->
+                <!--		<ignoreVersions>-->
+                <!--			&lt;!&ndash; use ignoreVersion tag setting "SNAPSHOT、alpha、beta" and so on &ndash;&gt;-->
+                <!--			<ignoreVersion>-->
+                <!--				&lt;!&ndash; 'exact' (default) or 'regex' &ndash;&gt;-->
+                <!--				<type>regex</type>-->
+                <!--				<version>(.+-SNAPSHOT|.+-M\d)</version>-->
+                <!--			</ignoreVersion>-->
+                <!--			<ignoreVersion>-->
+                <!--				<type>regex</type>-->
+                <!--				<version>.+-(alpha|beta)</version>-->
+                <!--			</ignoreVersion>-->
+                <!--		</ignoreVersions>-->
+                <!--	</ruleSet>-->
+                <!--</configuration>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${maven-enforcer-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>[3.6.3,)</version>
+                                    <message>Using the minimum version of Maven: 3.6.3</message>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>io.owl</groupId>
+                        <artifactId>checkstyle-config</artifactId>
+                        <version>${checkstyle-config.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <skip>false</skip>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>checkstyle-validation</id>
+                        <phase>validate</phase>
+                        <inherited>true</inherited>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<plugin>-->
+            <!--	<groupId>com.github.wvengen</groupId>-->
+            <!--	<artifactId>proguard-maven-plugin</artifactId>-->
+            <!--	<version>${proguard-maven-plugin.version}</version>-->
+            <!--	<executions>-->
+            <!--		<execution>-->
+            <!--			<phase>package</phase>-->
+            <!--			<goals>-->
+            <!--				<goal>proguard</goal>-->
+            <!--			</goals>-->
+            <!--		</execution>-->
+            <!--	</executions>-->
+            <!--	<configuration>-->
+            <!--		<injar>${project.build.finalName}.jar</injar>-->
+            <!--		<outjar>${project.build.finalName}.jar</outjar>-->
+            <!--		<proguardInclude>${project.basedir}/proguard.cfg</proguardInclude>-->
+            <!--	</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+</project>
