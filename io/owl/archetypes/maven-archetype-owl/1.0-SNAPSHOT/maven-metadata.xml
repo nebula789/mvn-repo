@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>io.owl.archetypes</groupId>
+  <artifactId>maven-archetype-owl</artifactId>
+  <versioning>
+    <lastUpdated>20260216032006</lastUpdated>
+    <snapshot>
+      <timestamp>20260216.032006</timestamp>
+      <buildNumber>4</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20260216.032006-4</value>
+        <updated>20260216032006</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-20260216.032006-4</value>
+        <updated>20260216032006</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>1.0-SNAPSHOT</version>
+</metadata>
